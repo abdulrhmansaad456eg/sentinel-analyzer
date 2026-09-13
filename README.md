@@ -3,7 +3,7 @@
 **Technical Focus:** NIST SP 800-63B Compliance & Client-Side Cryptography
 
 ##  Project Overview
-Sentinel is a high-performance, security-focused web application designed to analyze password strength without compromising user privacy. Built for a competitive cybersecurity portfolio, it demonstrates the implementation of modern authentication standards and "Privacy-by-Design" principles.
+Sentinel is a security-focused web application that analyzes password strength without compromising user privacy. Built as a cybersecurity portfolio project, it demonstrates modern authentication standards and "Privacy-by-Design" principles.
 
 ##  Key Features
 * **100% Client-Side Analysis:** No password data ever leaves the user's browser.
@@ -17,12 +17,14 @@ The project is built using **Modular ES6 JavaScript** to ensure a clean separati
 * `crypto-utils.js`: Manages SHA-1 hashing using the native Web Crypto API.
 * `analyzer.js`: Core logic for entropy calculation and NIST guideline validation.
 * `ui.js`: Handles DOM updates and responsive dashboard rendering.
+* `main.js`: Wires the modules together and bootstraps the app.
+* `zxcvbn-loader.js`: Loads the `zxcvbn` heuristic library.
 
 
 
 ##  Security & Threat Model
 ### Privacy Guarantee
-We follow a **Zero-Knowledge** architecture. By utilizing the Web Crypto API, we generate a SHA-1 hash locally. We only transmit the first 5 hex characters of this hash to check for breaches. This prevents the service provider from ever reconstructing the user's password.
+Sentinel uses a **Zero-Knowledge** architecture. By utilizing the Web Crypto API, it generates a SHA-1 hash locally and only transmits the first 5 hex characters of this hash to check for breaches. This prevents the service provider from ever reconstructing the user's password.
 
 ### Compliance
 Aligns with **OWASP Password Storage Guidelines** and **NIST Digital Identity Guidelines**. It specifically targets the mitigation of:
