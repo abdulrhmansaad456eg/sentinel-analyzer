@@ -1,4 +1,4 @@
-
+/**
  * Cryptographic Utility Module
  * Uses Native Web Crypto API for performance and security.
  */
